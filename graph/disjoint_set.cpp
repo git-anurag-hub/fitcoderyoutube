@@ -23,6 +23,7 @@ void make_set(vector<int>& parent)
 int find(vector<int>& parent, int x)
 {
     if(x != parent[x])
+        // PATH COMPRESSION
         parent[x] = find(parent, parent[x]);
     return parent[x];
 }
